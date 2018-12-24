@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="578.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="icook.FXMLDocumentController">
+   <children>
+      <MenuBar prefHeight="29.0" prefWidth="615.0">
+        <menus>
+          <Menu fx:id="baseMenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAddRecipeAction" text="Add Recipe" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleLoadRecipeAction" text="Load Recipe" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleRemoveRecipeAction" text="Remove Recipe" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ScrollPane layoutY="28.0" prefHeight="550.0" prefWidth="615.0">
+        <content>
+          <AnchorPane fx:id="vizPane" minHeight="0.0" minWidth="0.0" prefHeight="548.0" prefWidth="613.0">
+               <children>
+                  <VBox fx:id="recipeVBox" layoutY="-2.0" prefHeight="530.0" prefWidth="615.0">
+                     <children>
+                        <Button fx:id="createSchedule" mnemonicParsing="false" onAction="#handleCreateScheduleAction" prefHeight="0.0" prefWidth="615.0" text="Create Schedule" />
+                     </children></VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

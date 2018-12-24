@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="iCook.jnlp">
+  <information>
+    <title>iCook</title>
+    <vendor>benfrailey</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="iCook.jar" size="20454" download="eager" />
+    <jar href="lib/JavaOCR.jar" size="166702" download="eager" />
+    <jar href="lib/gson-2.8.5.jar" size="241622" download="eager" />
+    <jar href="lib/json-simple-1.1.1.jar" size="23737" download="eager" />
+    <jar href="lib/tess4j-3.4.8.jar" size="5212199" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="iCook" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="icook.ICook"  name="iCook" />
+  <update check="always"/>
+</jnlp>
