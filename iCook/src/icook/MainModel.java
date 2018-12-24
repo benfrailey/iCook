@@ -21,11 +21,15 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -231,7 +235,27 @@ public class MainModel {
     
     public void removeRecipe(Recipe recipe){
         loadedRecipes.remove(recipe);
-        //recipeList.remove(recipe.convertToJSON());
+    }
+    
+    public String convertToString(VBox recipeVBox){
+        ObservableList<Node> nodes = recipeVBox.getChildren();
+        String textFile = "";
+        for(Node node : nodes){
+            try{
+            Text text = (Text) node;
+            textFile = textFile.concat((text.getText()) + "\n");
+            } catch(ClassCastException ex){
+                try{
+                    BorderPane borderPane = (BorderPane) node;
+                    Text leftText = (Text)borderPane.getLeft();
+                    Text rightText = (Text)borderPane.getRight();
+                    textFile = textFile.concat(leftText.getText() + "        " + rightText.getText() + "\n");
+                } catch(ClassCastException ex1){
+                    
+                }
+            }
+        }
+        return textFile;
     }
     
     public void removeRecipeFromMemory(ArrayList<String> recipeStrings){

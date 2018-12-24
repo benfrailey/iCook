@@ -5,6 +5,8 @@
  */
 package icook;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -37,6 +39,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  *
@@ -226,7 +230,7 @@ public class FXMLDocumentController implements Initializable {
             finalizeButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-                    if(hourText.getText().equals("") || minuteText.getText().equals("")){
+                    if(hourText.getText().equals("") || minuteText.getText().equals("") || Integer.parseInt(hourText.getText()) > 12 || Integer.parseInt(hourText.getText()) < 1 || Integer.parseInt(minuteText.getText()) > 59 || Integer.parseInt(minuteText.getText()) < 0){
                         eventError(2);
                 }
                     else{
@@ -288,7 +292,16 @@ public class FXMLDocumentController implements Initializable {
             
             recipeVBox.getChildren().add(borderPane);
             }
-        
+            
+        Button saveButton = new Button("Save");
+        saveButton.prefWidthProperty().bind(vizPane.widthProperty());
+        saveButton.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+                    save(recipeVBox);
+                }
+        });
+        recipeVBox.getChildren().addAll(new Text(), saveButton);
     }
     
     
@@ -409,9 +422,42 @@ public class FXMLDocumentController implements Initializable {
         if(error == 2){
             alert.setTitle("Finalize Schedule Error!");
             alert.setHeaderText("Please Try Again");
-            alert.setContentText("Unable to finalize schedule because dinner time was not specified");
+            alert.setContentText("Unable to finalize schedule because dinner time was entered incorrectly");
         }
         alert.showAndWait();
+    }
+    
+    public void save(VBox recipeVBox){
+        FileChooser fileChooser = new FileChooser();
+        Stage stage = (Stage) vizPane.getScene().getWindow();
+        
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+        
+        File file = fileChooser.showSaveDialog(stage);
+        
+        FileWriter writer = null;
+        
+        if(file != null) {
+            
+            try {
+                writer = new FileWriter(file);
+                
+                writer.write(model.convertToString(recipeVBox));
+                
+            } catch( IOException ex) {
+                MainModel.displayExceptionAlert(ex);
+            } catch (Exception ex) {
+                MainModel.displayExceptionAlert(ex);
+            } finally {
+                if (writer != null) {
+                    try {
+                        writer.close();
+                    } catch (IOException ex) {
+                        MainModel.displayExceptionAlert(ex);
+                    }
+                }
+            }
+        }
     }
     
 //    public void readImage(){
