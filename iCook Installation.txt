@@ -1,0 +1,19 @@
+How to install iCook:
+
+Assuming Java isn't already installed on your computer, you will need to install it:
+1. Go to https://www.java.com/en/download/
+2. Click "Free java Download"
+3. Follow installation instructions
+
+Next, you will need to install the actual program
+1. go to https://github.com/benfrailey/iCook
+2. click "Clone or download"
+3. Download Zip File
+4. place Zip File on desktop and double click it to unzip it
+5. Drag and drop iCook-Master onto the desktop
+6. Open iCook folder, then dist folder, and you should see a few files called "iCook". The one that is marked as a ".jar" file is the one that runs the program. You can run it from here
+7. You will most likely want to move it to a more convenient location, so right click, hover over "new" and then click "shortcut". 
+8. You will need to select the location of the file, so press browse, and click desktop then iCook-Master then iCook then dist then click the iCook jar file (the one with the coffee cup logo) and press "Ok"
+9. Click Next and then Finish
+9. This will create a shortcut, which you can drag and drop wherever you would like to access it (most likely desktop)
+10. Double click the program to open it

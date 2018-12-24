@@ -1,0 +1,33 @@
+How to use iCook
+
+To add a new recipe: 
+1. click File and then add recipe
+2. Enter information for recipe
+3. Click "Add Recipe"
+
+To load a previously used recipe:
+1. Click File and then load recipe
+2. Select the recipe or recipes that you would like to load
+3. Click "Add Recipe"
+
+To remove a recipe from memory so that it cannot be loaded in the future
+1. Click File and then remove recipe
+2. Select the recipe or recipes that you would like to remove from memory
+3. Click "Remove Recipe"
+
+To remove a recipe from the currently loaded recipes
+1. Click the recipe you would like to remove
+2. A dropdown menu will appear displaying the recipe info
+3. Click "Remove Recipe"
+
+
+Once all recipes have been selected, click "Create Schedule"
+1. Enter in the time you would like to eat dinner in the "Dinner Time" boxes
+2. The program will read the instructions for an amount of time. (Example: Bake for 20 minutes). If there is no time listed it will display 0. To change the amount of time for each instruction, edit the text box that lines up with the instruction
+3. Double check to ensure the timing for each instruction is correct
+4. Click "Finalize Schedule"
+5. The next screen will display all the ingredients and the timing for the instructions. You can reference this page while cooking or if you would like to print it out you can save it to a text file by pressing "save", choosing a destination and a file name and saving it
+6. Once you save the file, open it and print it out from there
+7. Some operating systems don't load the information into the text file correctly, so if the entire recipe is on one line you may have to space it out manually
+
+Enjoy! Merry Christmas!
