@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="iCook.jar" size="22601" download="eager" />
+    <jar href="iCook.jar" size="22610" download="eager" />
     <jar href="lib/gson-2.8.5.jar" size="241622" download="eager" />
     <jar href="lib/json-simple-1.1.1.jar" size="23737" download="eager" />
   </resources>

@@ -22,7 +22,7 @@ public class Time {
     
     public void subtractTime(int minutes){
         minute -= minutes;
-        if(minute < 0){
+        while(minute < 0){
             hour --;
             minute += 60;
             if(hour < 1){
